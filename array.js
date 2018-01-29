@@ -90,7 +90,7 @@ var empire = [
   parent: 2
 },
 {
-  id: 13,
+  id: 31,
   name: "RN-35",
   post: "Soldier",
   image: "stromtrooper2.png",

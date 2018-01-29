@@ -8,7 +8,7 @@ $(document).ready(function ()
 {
 //logotype click event
     $("#logotype").click(function () {$(window).load();});
-
+/*logotype click event end*/
 /* click event*/
     $("#page-bottom").on("click", "div", function ()
     {
