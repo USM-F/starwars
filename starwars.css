@@ -1,0 +1,286 @@
+
+/* back*/
+body{
+    background: url(assets/background/stars.png),
+                url(assets/background/bg.png);
+  }
+
+/* logotype  star wars*/
+#logotype{
+  padding-top: 10%;
+  width: 8%;
+  height: 8%;
+  margin-left: 45%;
+  cursor: pointer;
+  }
+
+#page-top{
+  margin: auto;
+  background-image: url(assets/svg/circle.svg);
+  background-size: 125%;
+  background-position: bottom center;
+  width: 1400px;
+  height: auto;
+  max-width: 100%;
+  max-height: 50%;
+  margin-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 40px;
+}
+
+#back{
+  font-family: 'Open Sans';
+  font-weight: normal;
+  font-size: 1vw;
+  text-align: left;
+  color: #808080;
+  letter-spacing: 1px;
+  margin-left: 18%;
+  margin-top: 9%;
+  cursor: pointer;
+}
+
+
+@media (max-width: 1400px) {
+  #page-top{
+  padding-bottom: 2.5%;
+  }
+}
+
+#arrow-left{
+  width: 5%;
+  height: 5%;
+  margin-left: 15%;
+  margin-bottom: 4%;
+}
+
+#arrow-right{
+  width: 5%;
+  height: 5%;
+  transform: scale(-1, 1);
+  margin-left: 60%;
+  margin-bottom: 4%;
+
+}
+
+#page-top .avatar img{
+  position: center;
+  border-radius: 100%;
+  border: 2px solid white;
+  width: 15%;
+  height: 25%;
+  margin-top: 2%;
+  margin-left: 42%;
+  margin-bottom: -2%;
+}
+
+#page-top .avatar h1{
+  font-family: 'Open Sans';
+  font-weight: normal;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 180%;
+  padding-top: 3%;
+  margin-bottom: auto;
+}
+
+#page-top .avatar p{
+
+  font-family: 'Open Sans';
+  font-weight: normal;
+  color: #808080;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 120%;
+  margin-top: auto;
+}
+/*bottom div*/
+#page-bottom{
+  margin: auto;
+  width: 1400px;
+  height: auto;
+  max-width: 100%;
+  max-height: 50%;
+  margin-bottom: 8%;
+  cursor: pointer;
+}
+
+#page-bottom img{
+  position: center;
+  width: 25%;
+  height: 25%;
+  border-radius: 100%;
+  border: 2px solid white;
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-bottom: 7%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.avatar-left{
+    margin-top: 0%;
+    width: 30%;
+    height: auto;
+    max-height: 40%;
+    float: left;
+    padding-top: 2%;
+    margin-left: 15%;
+
+}
+
+.avatar-right{
+    margin-top: 0%;
+    width: 30%;
+    height: auto;
+    max-height: 40%;
+    float: right;
+    padding-top: 2%;
+    margin-right: 5%;
+}
+
+#page-bottom h1{
+  font-family: 'Open Sans';
+  font-weight: normal;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 120%;
+  padding-top: 3%;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+
+#page-bottom p{
+  font-family: 'Open Sans';
+  font-weight: normal;
+  color: #808080;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 80%;
+  margin-top: 1%;
+  cursor: pointer;
+}
+
+#page-bottom .quantity {
+
+  position: relative;
+
+  font-family: 'Open Sans';
+  font-weight: normal;
+  width: 35px;
+  height: 35px;
+  margin-left: 14%;
+  margin-bottom: -12%;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 28px;
+  border-radius: 100%;
+  background-color: red;
+  z-index: 5;
+  cursor: pointer;
+  }
+
+/*---hidden counter-------------------*/
+
+#page-bottom .quantless {
+
+  position: relative;
+  opacity: 0;
+  font-family: 'Open Sans';
+  font-weight: normal;
+  width: 35px;
+  height: 35px;
+  margin-left: 14%;
+  margin-bottom: -12%;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 28px;
+  border-radius: 100%;
+  background-color: red;
+  z-index: 5;
+  cursor: pointer;
+  }
+/*--------------------------*/
+
+@media (max-width: 1200px) {
+  #page-bottom .quantity {
+    max-width: 2.1vw;
+    max-height: 2vw;
+    font-size: 1.6vw;
+    }
+}
+
+  /*if less than 800px*/
+  @media (max-width: 800px) {
+  .avatar-left, .avatar-right{
+    width: 100%;
+    height: auto;
+    max-height: auto;
+    padding-top: 2%;
+    margin: auto;
+      }
+
+  #page-bottom img{
+    position: center;
+    width: 10%; height: 10%;
+    border-radius: 100%;
+    border: 2px solid white;
+    margin-top: 2%;
+    margin-left: 44%;
+    margin-bottom: 7%;
+    margin-right: 5%;
+    }
+
+    #page-bottom p{
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 1.5vw;
+    margin-top: 1%;
+    }
+
+    #page-bottom .quantity {
+    text-align: left;
+    max-width: 2.1vw;
+    max-height: 2vw;
+    font-size: 1.3vw;
+    margin-left: 45%;
+    margin-bottom: -7%;
+    z-index: 95;
+    }
+}
+
+/*events*/
+#arrow-left:hover{
+   opacity:0.5;
+   mix-blend-mode: normal;
+   cursor: pointer;
+}
+
+#arrow-right:hover{
+   opacity:0.5;
+   mix-blend-mode: normal;
+   cursor: pointer;
+}
+
+#back:hover{
+   color: white;
+   cursor: pointer;
+}
+
+#page-bottom img:hover{
+    opacity:0.5;
+    background-blend-mode: normal;
+}
+
+#page-bottom h1:hover{
+  color: red;
+  cursor: pointer;
+}
+#page-bottom p:hover{
+  color: white;
+  cursor: pointer;
+}
