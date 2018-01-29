@@ -6,9 +6,11 @@ $(window).load(function()
 
 $(document).ready(function ()
 {
+
 //logotype click event
     $("#logotype").click(function () {$(window).load();});
 /*logotype click event end*/
+
 /* click event*/
     $("#page-bottom").on("click", "div", function ()
     {
@@ -93,8 +95,8 @@ $(document).ready(function ()
     });
 /* arrow events end*/
 });
-// functions there
 
+// functions are here
 function find_subs(data, id_)
 {
 var count = 0;
@@ -137,6 +139,7 @@ $('#page-top .avatar img').attr('src', 'assets/avatars/' + empire[commanderPosit
 $('#page-top .avatar h1').text(empire[commanderPosition].name);
 $('#page-top .avatar p').text(empire[commanderPosition].post);
 $('#page-top .person-id').val(empire[commanderPosition].id);
+
 //очищаем контейнер page-bottom
 $("#page-bottom").empty();
 
@@ -166,7 +169,8 @@ $("#page-bottom").empty();
 
 return true;
 }
-//custom
+
+//custom state
 function custom_state()
 {
 var default_div = ''
