@@ -6,7 +6,6 @@ $(window).load(function()
 
 $(document).ready(function ()
 {
-
 //logotype click event
     $("#logotype").click(function () {$(window).load();});
 /*logotype click event end*/
@@ -19,7 +18,6 @@ $(document).ready(function ()
         draw(find_direct_subs(empire, commander_id), find_position(empire, commander_id));
 
         $('#back').fadeTo(0, 1); $('#arrow-left').show(); $('#arrow-right').show();
-
     });
 /* click event end*/
 
@@ -28,7 +26,7 @@ $(document).ready(function ()
     {
       var commander_id = $("#page-top").find('input').val();
       var commanderPosition = 0;
-//find position of boss
+      //find position of boss
       commanderPosition = find_position(empire, commander_id);
       if ((empire[commanderPosition].name == 'Darth Vader') || (empire[commanderPosition].name == 'Darh Sidius'))
         {$(window).load();}
@@ -54,7 +52,7 @@ $(document).ready(function ()
     var commander_id = $("#page-top").find('input').val();
     var commanderPosition = 0;
     var commanderEqual = [];
-//find position of boss
+    //find position of boss
     commanderPosition = find_position(empire, commander_id);
     for (i = 0; i < empire.length ; i++)
     {
@@ -62,12 +60,11 @@ $(document).ready(function ()
         { commanderEqual[commanderEqual.length] = empire[i]; }
     }
 
-    if (arrow<0) {arrow = commanderEqual.length-1;}
-    if (commander_id==commanderEqual[arrow].id) {arrow--;}
-    if (arrow<0) {arrow = commanderEqual.length-1;}
+    if (arrow < 0) {arrow = commanderEqual.length-1;}
+    if (commander_id == commanderEqual[arrow].id) {arrow--;}
+    if (arrow < 0) {arrow = commanderEqual.length-1;}
 
     commander_id = commanderEqual[arrow].id;
-
     draw(find_direct_subs(empire, commander_id), find_position(empire, commander_id));
     });
 
@@ -76,7 +73,7 @@ $(document).ready(function ()
       var commander_id = $("#page-top").find('input').val();
       var commanderPosition = 0;
       var commanderEqual = [];
-  //find position of boss
+      //find position of boss
       commanderPosition = find_position(empire, commander_id);
 
       for(i = 0; i < empire.length ; i++)
@@ -90,7 +87,6 @@ $(document).ready(function ()
       if (arrow>(commanderEqual.length-1)) {arrow = 0;}
 
       commander_id = commanderEqual[arrow].id;
-
       draw(find_direct_subs(empire, commander_id), find_position(empire, commander_id));
     });
 /* arrow events end*/
@@ -100,7 +96,6 @@ $(document).ready(function ()
 function find_subs(data, id_)
 {
 var count = 0;
-
   for (index in data)
   {
     if (data[index].parent == id_)
@@ -108,13 +103,14 @@ var count = 0;
   }
 return count;
 }
+
 //find position from id
 function find_position(data, id_)
 {
 var position = 0;
   for (index in data)
   {
-    if (data[index].id == id_) {position = index; }
+    if (data[index].id == id_) { position = index; }
   }
   return position;
 }
@@ -133,7 +129,6 @@ var direct_sub = [];
 function draw(sub, commanderPosition)
 {
 var subTable = '';
-
 //avatar top
 $('#page-top .avatar img').attr('src', 'assets/avatars/' + empire[commanderPosition].image);
 $('#page-top .avatar h1').text(empire[commanderPosition].name);
@@ -152,14 +147,14 @@ $("#page-bottom").empty();
 
     if(i % 2 == 0)
     {
-        subTable += '<div class="avatar-left"><input type="hidden" class="person-id" value="' + sub[i].id + '">'
+        subTable+= '<div class="avatar-left"><input type="hidden" class="person-id" value="' + sub[i].id + '">'
         + subsCount
         +'<img src="assets/avatars/' + sub[i].image + '"align = "left"><h1>' + sub[i].name + '</h1>'
         + '<p>' + sub[i].post +'</p></div>';
     }
     else
     {
-        subTable += '<div class="avatar-right"><input type="hidden" class="person-id" value="' + sub[i].id + '">'
+        subTable+= '<div class="avatar-right"><input type="hidden" class="person-id" value="' + sub[i].id + '">'
         + subsCount
         +'<img src="assets/avatars/' + sub[i].image + '"align = "left"><h1>' + sub[i].name + '</h1>'
         + '<p>' + sub[i].post +'</p></div>';
@@ -187,7 +182,7 @@ var commanderPosition = 0;
   if (subsCount == 0) {subsCount = '<div class="quantless"><p>' + subsCount + '</p></div>';}
   else {subsCount = '<div class="quantity"><p>' + subsCount + '</p></div>';}
 
-  default_div += '<div class="avatar-left"><input type="hidden" class="person-id" value="' + empire[commanderPosition].id + '">'
+  default_div+= '<div class="avatar-left"><input type="hidden" class="person-id" value="' + empire[commanderPosition].id + '">'
   + subsCount
   +'<img src="assets/avatars/' + empire[commanderPosition].image + '"align = "left"><h1>' + empire[commanderPosition].name + '</h1>'
   + '<p>' + empire[commanderPosition].post +'</p></div>';
@@ -197,7 +192,7 @@ var commanderPosition = 0;
   if (subsCount == 0) {subsCount = '';}
     else {subsCount = '<div class="quantity"><p>' + subsCount + '</p></div>';}
 
-  default_div += '<div class="avatar-right"><input type="hidden" class="person-id" value="' + empire[commanderPosition].id + '">'
+  default_div+= '<div class="avatar-right"><input type="hidden" class="person-id" value="' + empire[commanderPosition].id + '">'
   + subsCount
   +'<img src="assets/avatars/' + empire[commanderPosition].image + '"align = "left"><h1>' + empire[commanderPosition].name + '</h1>'
   + '<p>' + empire[commanderPosition].post +'</p></div>';
