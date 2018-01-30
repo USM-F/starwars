@@ -29,18 +29,16 @@ $(document).ready(function ()
       //find position of boss
       commanderPosition = find_position(empire, commander_id);
       if ((empire[commanderPosition].name == 'Darth Vader') || (empire[commanderPosition].name == 'Darh Sidius'))
-        {$(window).load();}
+      { $(window).load(); }
       else
+      {
+        //replace boss
+        for(i in empire)
         {
-          //replace boss
-          for(i in empire)
-          { if(empire[i].id == empire[commanderPosition].parent)
-            {
-              commander_id = empire[i].id;
-            }
-          }
-          draw(find_direct_subs(empire, commander_id), find_position(empire, commander_id));
+          if(empire[i].id == empire[commanderPosition].parent) { commander_id = empire[i].id; }
         }
+        draw(find_direct_subs(empire, commander_id), find_position(empire, commander_id));
+      }
     });
 /* back event end*/
 
@@ -60,9 +58,9 @@ $(document).ready(function ()
         { commanderEqual[commanderEqual.length] = empire[i]; }
     }
 
-    if (arrow < 0) {arrow = commanderEqual.length-1;}
-    if (commander_id == commanderEqual[arrow].id) {arrow--;}
-    if (arrow < 0) {arrow = commanderEqual.length-1;}
+    if (arrow < 0) { arrow = commanderEqual.length-1; }
+    if (commander_id == commanderEqual[arrow].id) { arrow--; }
+    if (arrow < 0) { arrow = commanderEqual.length-1; }
 
     commander_id = commanderEqual[arrow].id;
     draw(find_direct_subs(empire, commander_id), find_position(empire, commander_id));
@@ -82,9 +80,9 @@ $(document).ready(function ()
           { commanderEqual[commanderEqual.length] = empire[i]; }
       }
 
-      if (arrow>(commanderEqual.length-1)) {arrow = 0;}
-      if (commander_id == commanderEqual[arrow].id) {arrow++;}
-      if (arrow>(commanderEqual.length-1)) {arrow = 0;}
+      if (arrow>(commanderEqual.length-1)) { arrow = 0; }
+      if (commander_id == commanderEqual[arrow].id) { arrow++; }
+      if (arrow>(commanderEqual.length-1)) { arrow = 0; }
 
       commander_id = commanderEqual[arrow].id;
       draw(find_direct_subs(empire, commander_id), find_position(empire, commander_id));
@@ -99,7 +97,7 @@ var count = 0;
   for (index in data)
   {
     if (data[index].parent == id_)
-      { count++; count+= find_subs(data, data[index].id); }
+    { count++; count+= find_subs(data, data[index].id); }
   }
 return count;
 }
@@ -109,11 +107,10 @@ function find_position(data, id_)
 {
 var position = 0;
   for (index in data)
-  {
-    if (data[index].id == id_) { position = index; }
-  }
-  return position;
+  { if (data[index].id == id_) { position = index; } }
+return position;
 }
+
 //find direct employers
 function find_direct_subs(data, id_)
 {
@@ -134,7 +131,6 @@ $('#page-top .avatar img').attr('src', 'assets/avatars/' + empire[commanderPosit
 $('#page-top .avatar h1').text(empire[commanderPosition].name);
 $('#page-top .avatar p').text(empire[commanderPosition].post);
 $('#page-top .person-id').val(empire[commanderPosition].id);
-
 //free page-bottom
 $("#page-bottom").empty();
 
