@@ -108,7 +108,7 @@ var count = 0;
   }
 return count;
 }
-//функция нахождения позиции элемента в массиве
+//find position from id
 function find_position(data, id_)
 {
 var position = 0;
@@ -118,7 +118,7 @@ var position = 0;
   }
   return position;
 }
-//прямые подчиненные
+//find direct employers
 function find_direct_subs(data, id_)
 {
 var direct_sub = [];
@@ -129,21 +129,21 @@ var direct_sub = [];
   return direct_sub;
 }
 
-//функция создания динамических объектов
+//draw objects
 function draw(sub, commanderPosition)
 {
 var subTable = '';
 
-//формируем большой аватар
+//avatar top
 $('#page-top .avatar img').attr('src', 'assets/avatars/' + empire[commanderPosition].image);
 $('#page-top .avatar h1').text(empire[commanderPosition].name);
 $('#page-top .avatar p').text(empire[commanderPosition].post);
 $('#page-top .person-id').val(empire[commanderPosition].id);
 
-//очищаем контейнер page-bottom
+//free page-bottom
 $("#page-bottom").empty();
 
-//формируем новую таблицу
+//create divs with employers
   for(i = 0; i < sub.length ; i++)
   {
     subsCount = find_subs(empire, sub[i].id);
@@ -170,7 +170,7 @@ $("#page-bottom").empty();
 return true;
 }
 
-//custom state
+//custom state of page
 function custom_state()
 {
 var default_div = ''
@@ -179,7 +179,7 @@ var commanderPosition = 0;
   $('#page-top .avatar h1').text('Galactic Empire');
   $('#page-top .avatar p').text('Imperial millitary');
   $('#page-top .person-id').val(undefined);
-  //очищаем контейнер page-bottom
+  //free page-bottom
   $("#page-bottom").empty();
 
   commanderPosition = find_position(empire, 15); //Sidius
